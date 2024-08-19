@@ -238,7 +238,8 @@ def create_app(args):
             ),
             storage_uri=args.req_limit_storage,
             default_limits_deduct_when=lambda req: True, # Force cost to be called after the request
-            default_limits_cost=limits_cost
+            default_limits_cost=limits_cost,
+            strategy="moving-window",
         )
     else:
         from .no_limiter import Limiter
@@ -401,7 +402,7 @@ def create_app(args):
       response = Response(render_template("app.js.template",
             url_prefix=args.url_prefix,
             get_api_key_link=args.get_api_key_link,
-            api_secret=secret.get_current_secret() if args.require_api_key_secret else ""), content_type='application/javascript; charset=utf-8')
+            api_secret=secret.get_current_secret_b64() if args.require_api_key_secret else ""), content_type='application/javascript; charset=utf-8')
 
       if args.require_api_key_secret:
         response.headers['Last-Modified'] = http_date(datetime.now())

@@ -6,7 +6,7 @@
 
 Free and Open Source Machine Translation API, entirely self-hosted. Unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source [Argos Translate](https://github.com/argosopentech/argos-translate) library.
 
-![image](https://user-images.githubusercontent.com/64697405/139015751-279f31ac-36f1-4950-9ea7-87e76bf65f51.png)
+![Translation](https://github.com/user-attachments/assets/457696b5-dbff-40ab-a18e-7bfb152c5121)
 
 [Try it online!](https://libretranslate.com) | [API Docs](https://libretranslate.com/docs)
 
@@ -162,7 +162,7 @@ run.bat [args]
 
 ## Build and Run
 
-See [CONTIRBUTING.md](./CONTRIBUTING.md) for information on how to build and run the project yourself.
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for information on how to build and run the project yourself.
 
 ### CUDA
 
@@ -216,6 +216,7 @@ Arguments passed to the process or set via environment variables are split into 
 | --api-keys-remote          | Use this remote endpoint to query for valid API keys instead of using the local database                                                                                                                    | `Empty (use local db instead)`        | LT_API_KEYS_REMOTE          |
 | --get-api-key-link         | Show a link in the UI where to direct users to get an API key                                                                                                                                               | `Empty (no link shown on web ui)`     | LT_GET_API_KEY_LINK         |
 | --shared-storage           | Shared storage URI to use for multi-process data sharing (e.g. when using gunicorn)                                                                                                                         | `memory://`                           | LT_SHARED_STORAGE           |
+| --secondary                | Mark this instance as a secondary instance to avoid conflicts with the primary node in multi-node setups                                                                                                    | `Primary node`                        | LT_SECONDARY                |
 | --load-only                | Set available languages                                                                                                                                                                                     | `Empty (use all from argostranslate)` | LT_LOAD_ONLY                |
 | --threads                  | Set number of threads                                                                                                                                                                                       | `4`                                   | LT_THREADS                  |
 | --metrics-auth-token       | Protect the /metrics endpoint by allowing only clients that have a valid Authorization Bearer token                                                                                                         | `Empty (no auth required)`            | LT_METRICS_AUTH_TOKEN       |
@@ -418,7 +419,6 @@ URL |API Key Required | Links
 [libretranslate.com](https://libretranslate.com)|:heavy_check_mark:|[ [Get API Key](https://portal.libretranslate.com) ] [ [Service Status](https://status.libretranslate.com/) ]
 [translate.terraprint.co](https://translate.terraprint.co/)|-
 [trans.zillyhuhn.com](https://trans.zillyhuhn.com/)|-
-[libretranslate.eownerdead.dedyn.io](https://libretranslate.eownerdead.dedyn.io)|-
 [translate.lotigara.ru](https://translate.lotigara.ru)|-
 
 ## TOR/i2p Mirrors
